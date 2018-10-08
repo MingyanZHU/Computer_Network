@@ -5,7 +5,7 @@ $$ \frac{W}{2}$$
 $$ \frac{W}{2RTT}$$
 $$ \frac{0.75W}{RTT}$$
 
-$$ 1500 $$
+$$ 1500 \rm bytes$$
 $$ RTT$$
 $$ 100 \rm ms$$
 
@@ -37,3 +37,15 @@ $$ L \approx 2 \times 10 ^ {-10}$$
 $$ \cfrac{R}{10}$$ 
 
 $$ \cfrac{R}{2}$$
+
+$$ (loss\ rate, L)$$
+
+$$ 5\ 000\ 000\ 000$$
+
+$$ MSS(Maximum\ Segment\ Size) 最大报文长度$$
+
+$$ R $$
+
+$$ K $$
+
+$$ \frac{R}{K}$$ 
