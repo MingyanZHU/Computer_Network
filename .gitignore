@@ -106,3 +106,6 @@ venv.bak/
 
 # cache for HTTP server
 cache/
+
+# pycharm config
+.idea/
