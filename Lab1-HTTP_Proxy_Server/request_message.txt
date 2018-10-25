@@ -1,3 +1,0 @@
-b'CONNECT ss1.baidu.com:443 HTTP/1.1\r\nHost: ss1.baidu.com:443\r\nProxy-Connection: keep-alive\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36\r\n\r\n'
-
-CONNECT ss1.baidu.com:443 HTTP/1.1\r\nHost: ss1.baidu.com:443\r\nProxy-Connection: keep-alive\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36\r\n\r\n
