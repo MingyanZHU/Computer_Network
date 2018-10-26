@@ -59,7 +59,7 @@ class ProxyServer:
             url = urlp.urlparse(request_line[1])
         if self.filter_web(url.hostname):
             print("Denied ", url.geturl())
-            with open('/home/zmy/data/Computer_Network/lab/Lab1-HTTP_Proxy_Server/301.html') as f:
+            with open('./404.html') as f:
                 new_sock.sendall(f.read().encode())
             new_sock.close()
             return
