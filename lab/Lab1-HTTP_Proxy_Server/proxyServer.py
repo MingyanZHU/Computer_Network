@@ -39,7 +39,8 @@ class ProxyServer:
             fishing = filter_json['fishing']
             for fish in fishing:
                 if url in fish:
-                    return str('HTTP/1.1 404 Not Found' + '\r\n\r\n')
+                    with open('./301_move.txt') as f:
+                        return f.read()
                     #　TODO 不能显示的原因404 not found 在于 没有后加HTML
                     #　TODO 可以根据test.py中 获取某种404反馈 
         return False
@@ -58,12 +59,16 @@ class ProxyServer:
             url = urlp.urlparse(request_line[1])
         if self.filter_web(url.hostname):
             print("Denied ", url.geturl())
+            with open('/home/zmy/data/Computer_Network/lab/Lab1-HTTP_Proxy_Server/301.html') as f:
+                new_sock.sendall(f.read().encode())
             new_sock.close()
             return
         fish = self.filter_fishing(url.hostname)
         if fish:
-           new_sock.send(fish.encode())
-           return 
+            print("www.fudan.edu.cn")
+            new_sock.send(requests.get('http://www.zju.edu.cn').content)
+            # TODO 完善钓鱼和限制网站
+            return 
         new_out_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         file_name = self.__cache_dir + (url.hostname + url.path).replace('/', '_')
         flag_modified = False
@@ -84,9 +89,10 @@ class ProxyServer:
                     # for line in f:
                     #     new_sock.send(line.encode())
                     # 莫名很慢 有时候甚至读不出来
-                    output = f.readlines()
-                    for i in range(len(output)):
-                        new_sock.sendall(output[i].encode())
+                    # output = f.readlines()
+                    # for i in range(len(output)):
+                    #     new_sock.sendall(output[i].encode())
+                    new_sock.sendall(f.read().encode())
             else:
                 os.remove(file_name)
                 flag_modified = True
