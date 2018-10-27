@@ -9,9 +9,7 @@ import json
 
 
 class ProxyServer(object):
-    """ 使用requests重构proxyServer.py
-    貌似一些网站对于requests进行封禁 所以建议直接使用socket
-    针对HTTP协议 对于使用https协议的无法进行处理 """
+    """ 对于使用https协议的无法进行处理 """
     def __init__(self):
         self.sever_port = 12138  # 代理服务器的主要端口
         self.server_main_socket = socket.socket(
