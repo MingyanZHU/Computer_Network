@@ -19,15 +19,15 @@
       </tr>
       <tr>
       <td rowspan="1" colspan="1">姓名</td>
-      <td rowspan="1" colspan="3"></td> 
+      <td rowspan="1" colspan="3">朱明彦</td> 
       <td rowspan="1" colspan="1">院系</td>
       <td rowspan="1" colspan="3">计算机科学与技术学院</td>
       </tr>
       <tr>
       <td rowspan="1" colspan="1">班级</td>
-      <td rowspan="1" colspan="3"></td>
+      <td rowspan="1" colspan="3">1603109</td>
       <td rowspan="1" colspan="1">学号</td>
-      <td rowspan="1" colspan="3"></td>
+      <td rowspan="1" colspan="3">1160300314</td>
       </tr>
       <tr>
       <td rowspan="1" colspan="1">任课教师</td>
@@ -37,9 +37,9 @@
       </tr>
       <tr>
       <td rowspan="1" colspan="1">实验地点</td>
-      <td rowspan="1" colspan="3"></td>
+      <td rowspan="1" colspan="3">格物213</td>
       <td rowspan="1" colspan="1">实验时间</td>
-      <td rowspan="1" colspan="3">2018年10月27日</td>
+      <td rowspan="1" colspan="3">2018年</td>
       </tr>
       <tr>
       <td rowspan="2"> 实验课表现</td> 
