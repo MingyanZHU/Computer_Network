@@ -109,3 +109,6 @@ cache/
 
 # pycharm config
 .idea/
+
+# process graph
+process_graph/
