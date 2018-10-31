@@ -48,7 +48,6 @@ class GBNClient(object):
         self.socket_2 = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # 主要用作Client作为接收端的socket
         self.socket_2.bind(('', CLIENT_PORT_2))
         self.data_seq = [b'0'] * LENGTH_SEQUENCE  # 作为已发送数据的缓存
-        # self.ack_seq = [-1] * LENGTH_SEQUENCE   # 用作ACK确认
 
     def __timeout(self):
         print("Client Timer Timeout")
@@ -68,10 +67,8 @@ class GBNClient(object):
                 self.socket_1.sendto(pkt, (SERVER_IP, SERVER_PORT_1))
                 print("Client Send", self.next_seq_num)
                 self.data_seq[self.next_seq_num] = pkt
-                # self.ack_seq[self.next_seq_num] = 0
                 self.next_seq_num = self.next_seq_num + 1
-                # if self.next_seq_num == 0:
-                #     return  # 用作测试 仅发送一轮
+
             self.next_seq_num = self.next_seq_num % LENGTH_SEQUENCE
             readable, writeable, errors = select.select([self.socket_1, ], [], [], 1)
             # 非阻塞方式
@@ -81,15 +78,9 @@ class GBNClient(object):
                 if 'ACK' in message:
                     messages = message.split()
                     print("Client Receive", message)
-                    # for i in range(self.base, int(messages[1]) + 1):
-                    #     self.ack_seq[i] += 1
                     self.base = (int(messages[1]) + 1) % LENGTH_SEQUENCE
                     if self.base == self.next_seq_num:
                         self.timer = -1
-                    # elif self.ack_seq[self.base] > 1:
-                    #     self.timer += 1
-                    #     if self.timer > MAX_TIMER:
-                    #         self.__timeout()
                     else:
                         self.timer = 0
             else:
@@ -145,8 +136,8 @@ class GBNServer(object):
             message = mgs_byte.decode().split()
             if int(message[0]) == self.expected_seq_num:
                 self.data_seq[self.expected_seq_num] = message[1]
-                time.sleep(random.uniform(0, 3))
-                if random.getrandbits(1) == 0:
+                time.sleep(random.uniform(0, 3))    # 制造延迟 模拟Timer超时
+                if random.getrandbits(1) == 0:  # 50%概率发送ACK报文
                     ack_pkt = make_ack_pkt(self.expected_seq_num)
                     self.socket_1.sendto(ack_pkt, (CLIENT_IP, CLIENT_PORT_1))
                     print("Server Send ACK", self.expected_seq_num)
@@ -162,10 +153,6 @@ class GBNServer(object):
         while True:
             # self.__receive()
             self.__receive_random_throw()  # 用作随机丢包测试
-            # if self.expected_seq_num == 0:
-            #     break   # 用作测试 仅发送一轮
-        # for i in range(LENGTH_SEQUENCE):
-        #     print(i, self.data_seq[i])
 
 
 # TODO 模拟丢包实现
