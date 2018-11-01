@@ -243,12 +243,6 @@ class GBNServer(object):
             self.__send()
 
 
-# TODO 全双工通信实现
-#       全双工已实现 需将输出转移到不同的文件中(如在一个main.py中同时开两个线程调用Client和Server
-#       并且Client和Server在其自身的函数中也开两个线程同时实现send和receive)
-# TODO SR协议实现
-
-
 def main():
     client = GBNClient()
     server = GBNServer()
