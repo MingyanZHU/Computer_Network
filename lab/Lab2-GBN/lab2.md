@@ -71,6 +71,7 @@
 <div STYLE="page-break-after: always;"></div>
 <!-- 此处用于换行 -->
 
+# 见doc格式报告 
 # 实验目的
 理解滑动窗口协议的基本原理；掌握GBN的工作原理；掌握基于UDP设计并实现一个GBN协议的过程与技术。
 # 实验内容
