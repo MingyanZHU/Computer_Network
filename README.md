@@ -65,14 +65,17 @@
 
 ### 实验内容
 
-- [ ] 学习Wireshark的使用
-- [ ] 利用Wireshark分析HTTP协议
-- [ ] 利用Wireshark分析TCP协议
-- [ ] 利用Wireshark分析IP协议
-- [ ] 利用Wireshark分析Ethernet数据帧
+- [x] 学习Wireshark的使用
+- [x] 利用Wireshark分析HTTP协议
+- [x] 利用Wireshark分析TCP协议
+- [x] 利用Wireshark分析IP协议
+- [x] 利用Wireshark分析Ethernet数据帧
 
 **选做内容**
 
-- [ ] 利用Wireshark分析DNS协议
-- [ ] 利用Wireshark分析UDP协议
-- [ ] 利用Wireshark分析ARP协议
+- [x] 利用Wireshark分析DNS协议
+- [x] 利用Wireshark分析UDP协议
+- [x] 利用Wireshark分析ARP协议
+
+### 写在实验后
+Wireshark是个相当强大的工具，学会使用不仅仅在本次实验中有用，在以后的学习工作生活中，同样有很大的帮助。~~(但是本次实验还是相当繁琐的)~~
