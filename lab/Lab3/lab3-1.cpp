@@ -19,7 +19,7 @@ extern unsigned int getIpv4Address();
 int stud_ip_recv(char *pBuffer, unsigned short length)
 {
     int version = pBuffer[0] >> 4;                             // 0 byte first 4 bits ip version
-    int head_length = pBuffer[0] & 0xf;                       // 0 byte last 4 bits  head length
+    int head_length = pBuffer[0] & 0xf;                        // 0 byte last 4 bits  head length
     short ttl = (unsigned short)pBuffer[8];                    // 8 byte all 8 bits ttl
     short checksum = ntohs(*(unsigned short *)(pBuffer + 10)); // 10 byte all 8 bits
     int destination = ntohl(*(unsigned int *)(pBuffer + 16));  // 16 byte 4 Bytes destination ip
@@ -53,12 +53,12 @@ int stud_ip_recv(char *pBuffer, unsigned short length)
     for (i = 0; i < head_length * 2; i++)
     {
         temp += (unsigned char)pBuffer[i * 2] << 8;
-        temp += (unsigned char)pBuffer[i * 2+ 1];
+        temp += (unsigned char)pBuffer[i * 2 + 1];
         sum += temp;
         temp = 0;
     }
     unsigned short l_word = sum & 0xffff;
-    unsigned short h_word = sum >> 16;  
+    unsigned short h_word = sum >> 16;
     if (l_word + h_word != 0xffff)
     {
         ip_DiscardPkt(pBuffer, STUD_IP_TEST_CHECKSUM_ERROR);
