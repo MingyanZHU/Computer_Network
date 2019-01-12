@@ -9,6 +9,17 @@
 关于实验部分，希望能够改进实验3的设置，主要在于实验平台过于老旧以及实验内容过于单调。
 
 于2018年秋季期末后
+
+## 仓库组成
+**该仓库用于2018年秋季哈尔滨工业大学计算机网络课程内容备份。**
+主要包括以下几个方面的内容：
+- [课程PPT](https://github.com/1160300314/Computer_Network/tree/master/%E8%AF%BE%E7%A8%8BPPT)
+- [实验代码](https://github.com/1160300314/Computer_Network/tree/master/lab)
+- [iPad中的笔记](https://github.com/1160300314/Computer_Network/tree/master/Pad%E7%AC%94%E8%AE%B0)
+- [iPad中带有标记的PPT](https://github.com/1160300314/Computer_Network/tree/master/Pad_Slides)
+- [socket编程测试](https://github.com/1160300314/Computer_Network/tree/master/socket_programming_test)
+- [复习中使用的题目](https://github.com/1160300314/Computer_Network/tree/master/%E5%A4%8D%E4%B9%A0%E5%8F%82%E8%80%83%E9%A2%98%E7%9B%AE)
+- 以及未在仓库中的王道考研的计算机网络部分。
 ## Lab1 HTTP代理服务器的设计与实现
 ### 实验目的
 熟悉并掌握Socket网络变成的过程与技术；深入理解HTTP协议，掌握HTTP代理服务器的基本工作原理；掌握HTTP代理服务器设计用于变成实现的基本技能。
